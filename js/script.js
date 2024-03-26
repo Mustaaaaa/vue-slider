@@ -31,6 +31,13 @@ createApp({
             
         }
     },
-    
+    methods: {
+        next() {
+            this.currentSlidesI = this.currentSlidesI + 1 ;
+        },
+        before() {
+            this.currentSlidesI = this.currentSlidesI - 1  ;
+        }
+    }
     
 }).mount('#app')
