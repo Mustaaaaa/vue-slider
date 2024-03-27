@@ -32,19 +32,25 @@ createApp({
         }
     },
     methods: {
+        // next() {
+        //     if (this.currentSlidesI < this.slides.length - 1) {
+        //         this.currentSlidesI++;
+        //     } else {
+        //         this.currentSlidesI = 0;
+        //     }
+        // },
+        // before() {
+        //     if (this.currentSlidesI === 0) {
+        //         this.currentSlidesI = this.slides.length - 1;
+        //     } else {
+        //         this.currentSlidesI--;
+        //     }
+        // },
         next() {
-            if (this.currentSlidesI < this.slides.length - 1) {
-                this.currentSlidesI++;
-            } else {
-                this.currentSlidesI = 0;
-            }
+            this.currentSlidesI = (this.currentSlidesI + 1) % this.slides.length;
         },
         before() {
-            if (this.currentSlidesI === 0) {
-                this.currentSlidesI = this.slides.length - 1;
-            } else {
-                this.currentSlidesI--;
-            }
+            this.currentSlidesI = (this.currentSlidesI - 1 + this.slides.length) % this.slides.length;
         },
         stopInterval() { 
             clearInterval(this.autoplay);
