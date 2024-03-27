@@ -45,8 +45,17 @@ createApp({
             } else {
                 this.currentSlidesI--;
             }
+        },
+        stopInterval() { 
+            clearInterval(this.autoplay);
+            this.autoplay = null;
+        },
+        startInterval() { 
+            this.autoplay = setInterval(this.next, 3000);
         }
     },
-
+    mounted() {
+        this.startInterval();
+    },
     
 }).mount('#app')
