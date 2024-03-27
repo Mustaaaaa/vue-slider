@@ -33,11 +33,20 @@ createApp({
     },
     methods: {
         next() {
-            this.currentSlidesI = this.currentSlidesI + 1 ;
+            if (this.currentSlidesI < this.slides.length - 1) {
+                this.currentSlidesI++;
+            } else {
+                this.currentSlidesI = 0;
+            }
         },
         before() {
-            this.currentSlidesI = this.currentSlidesI - 1  ;
+            if (this.currentSlidesI === 0) {
+                this.currentSlidesI = this.slides.length - 1;
+            } else {
+                this.currentSlidesI--;
+            }
         }
-    }
+    },
+
     
 }).mount('#app')
